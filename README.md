@@ -8,6 +8,40 @@ RULE 25 는 빠른 FIRE (Financial Independence, Retire Early) 달성을 위한 
 
 ## Tech Stacks
 
+- React
+  - react-router-dom
+  - styled-components
+  - lodash
+- Netlify
+
+## Getting Started
+
+### Yarn 설치
+
+Yarn 이 설치되지 않은 환경에서는 아래 명령을 통해 설치합니다.
+
+```
+npm install -g yarn
+```
+
+### 의존성 설치
+
+아래 명령을 통해 의존성 패키지를 설치합니다.
+
+```
+yarn
+```
+
+### 개발 서버 시작
+
+아래 명령을 통해 개발 서버를 실행합니다. 개발 서버는 `localhost:3000` 으로 접속할 수 있습니다.
+
+```
+yarn start
+```
+
+###
+
 ## Contributors
 
 > 10조는 인하대학교, 숭실대학교, 홍익대학교 학생으로 구성되어 있습니다.
