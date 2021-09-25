@@ -7,6 +7,8 @@ import { AiFillHome, AiOutlineStock } from 'react-icons/ai';
 import { BsPersonFill, BsFillPeopleFill } from 'react-icons/bs';
 import { RiMoneyDollarBoxLine } from 'react-icons/ri';
 
+import logo from './logo.png';
+
 const SideBar = styled.nav`
   z-index: 999;
   float: left;
@@ -120,7 +122,8 @@ const TopNav = styled.nav`
   justify-content: space-between;
 `;
 
-const Logo = styled.a`
+const Logo = styled.img`
+  height: 30px;
   font-size: 32px;
   color: #ff615b;
   margin-left: 28px;
@@ -164,7 +167,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <TopNav>
-        <Logo onClick={() => history.push('/')}>RULE 25</Logo>
+        <Logo onClick={() => history.push('/')} src={logo} />
       </TopNav>
       <SideBar>
         <div className="personalInfoArea">
