@@ -17,6 +17,10 @@ const Subtext = styled.div`
   font-size: 28px;
   margin-bottom: 20px;
   text-align: center;
+
+  & > span {
+    color: #ff615b;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -45,7 +49,9 @@ const Main = () => {
         년에 FIRE에 도달합니다 🔥
       </Text>
 
-      <Subtext>RULE 25와 함께 빠르게 FIRE에 도달하세요!</Subtext>
+      <Subtext>
+        친구 중 FIRE까지 <span>2등</span>으로 달리고 있어요!
+      </Subtext>
 
       <ImageWrapper>
         <Image src={image} />

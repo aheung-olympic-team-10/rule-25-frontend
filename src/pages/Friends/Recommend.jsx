@@ -94,7 +94,7 @@ const Recommend = () => {
       <Grid>
         <RecommendCard
           name="조동현"
-          desc="개발 힘들다"
+          desc="FIRE 25 입니다!!"
           onClick={() => onFollow(1)}
         />
         <RecommendCard

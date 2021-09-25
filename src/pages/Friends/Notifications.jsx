@@ -4,6 +4,8 @@ import { notification } from 'apis';
 
 import { Title } from 'ui';
 
+import { AiOutlineHeart } from 'react-icons/ai';
+
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
@@ -29,6 +31,11 @@ const ProfileImage = styled.image`
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;
+  flex-basis: 50px;
+`;
+
+const Content = styled.div`
+  flex-grow: 1;
 `;
 
 export default () => {
@@ -47,7 +54,10 @@ export default () => {
         {notis.map((row) => (
           <NotificationCard>
             <ProfileImage image="https://jejuhydrofarms.com/wp-content/uploads/2020/05/blank-profile-picture-973460_1280.png" />
-            {row.user.name} 님이 '{row.content}' 를 성공하셨습니다!
+            <Content>
+              {row.user.name} 님이 '{row.content}' 를 성공하셨습니다!
+            </Content>
+            <AiOutlineHeart />
           </NotificationCard>
         ))}
       </Wrapper>

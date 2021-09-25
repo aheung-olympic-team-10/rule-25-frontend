@@ -10,6 +10,7 @@ const Flex = styled.div`
 `;
 
 const Input = styled.input`
+  margin: 0 auto;
   width: 500px;
   height: 40px;
   border: none;
@@ -23,6 +24,7 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
+  margin: 0 auto;
   width: 500px;
   height: 40px;
   border: none;
@@ -36,6 +38,7 @@ const Select = styled.select`
 `;
 
 const Button = styled.button`
+  margin: 0 auto;
   width: 500px;
   border: none;
   outline: none;
@@ -53,8 +56,6 @@ const AddAccountBook = () => {
   const [form, setForm] = useState({
     type: 'income',
   });
-
-  console.log({ form });
 
   const onSubmit = async () => {
     const res = await accountBook.create(
@@ -77,9 +78,9 @@ const AddAccountBook = () => {
 
   return (
     <>
-      <Title>수입/지출 추가</Title>
+      <Title style={{ textAlign: 'center' }}>수입/지출 추가</Title>
       <Flex>
-        <div>
+        <div style={{ textAlign: 'center' }}>
           <Select onChange={(e) => setForm({ ...form, type: e.target.value })}>
             <option value="income">수입</option>
             <option value="expenditure">지출</option>

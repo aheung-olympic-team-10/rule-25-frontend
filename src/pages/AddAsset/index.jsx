@@ -19,10 +19,12 @@ const Input = styled.input`
   padding: 5px;
   padding-left: 20px;
   border-radius: 10px;
+  margin: 0 auto;
   margin-bottom: 20px;
 `;
 
 const Button = styled.button`
+  margin: 0 auto;
   width: 500px;
   border: none;
   outline: none;
@@ -58,7 +60,7 @@ const AddAsset = () => {
 
   return (
     <>
-      <Title>자산 추가</Title>
+      <Title style={{ textAlign: 'center' }}>자산 추가</Title>
       <Flex>
         <Input
           name="ticker"
