@@ -5,8 +5,10 @@ const SignIn = () => {
   const [form, setForm] = useState({});
 
   const onSubmitClick = async () => {
-    const token = (await user.login(form?.email, form?.password)).data;
+    const { token, userId } = (await user.login(form?.email, form?.password))
+      .data;
     localStorage.setItem('jwt', token);
+    localStorage.setItem('userId', userId);
   };
 
   return (
