@@ -57,7 +57,7 @@ const Children = styled.div`
 const LayoutTopOnly = ({ children }) => {
   const history = useHistory();
   const location = useLocation();
-  const [profile, setProfile] = useState({});
+  const [, setProfile] = useState({});
 
   useEffect(() => {
     if (location.pathname === '/sign-in' || location.pathname === '/sign-up') {
