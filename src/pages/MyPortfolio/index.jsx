@@ -55,7 +55,8 @@ const Main = () => {
               (1 - fire?.remainFirePeriod / fire?.initialFirePeriod) *
               100
             ).toFixed(2)}{' '}
-            % 진전하였습니다!
+            % 진전하였습니다! (총 자산{' '}
+            {Math.round(fire?.totalAsset).toLocaleString()} 원)
           </Subtext>
         </>
       )}

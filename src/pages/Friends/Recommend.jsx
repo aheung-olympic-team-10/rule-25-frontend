@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { follow } from 'apis';
 import { Title } from 'ui';
@@ -95,23 +94,23 @@ const Recommend = () => {
       <Grid>
         <RecommendCard
           name="조동현"
-          desc="개발자"
-          onClick={() => onFollow(2)}
+          desc="개발 힘들다"
+          onClick={() => onFollow(1)}
         />
         <RecommendCard
-          name="조동현"
-          desc="개발자"
-          onClick={() => onFollow(3)}
+          name="신지애"
+          desc="안녕하세요~!!"
+          onClick={() => onFollow(18)}
         />
         <RecommendCard
-          name="조동현"
-          desc="개발자"
-          onClick={() => onFollow(4)}
+          name="유지민"
+          desc="파이어족을 향하여!"
+          onClick={() => onFollow(17)}
         />
         <RecommendCard
-          name="조동현"
-          desc="개발자"
-          onClick={() => onFollow(5)}
+          name="유선호"
+          desc="안녕하세요 10조"
+          onClick={() => onFollow(16)}
         />
       </Grid>
     </div>

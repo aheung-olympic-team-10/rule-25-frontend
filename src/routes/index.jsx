@@ -1,6 +1,14 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import { Main, MyPortfolio, Friends, SignUp, SignIn } from 'pages';
+import {
+  Main,
+  MyPortfolio,
+  Friends,
+  AddAsset,
+  AddAccountBook,
+  SignUp,
+  SignIn,
+} from 'pages';
 import { Layout, LayoutTopOnly } from 'ui';
 
 const Router = () => (
@@ -18,6 +26,16 @@ const Router = () => (
     <Route exact path="/friends">
       <Layout>
         <Friends />
+      </Layout>
+    </Route>
+    <Route exact path="/add-asset">
+      <Layout>
+        <AddAsset />
+      </Layout>
+    </Route>
+    <Route exact path="/add-account-book">
+      <Layout>
+        <AddAccountBook />
       </Layout>
     </Route>
     <Route exact path="/sign-up">

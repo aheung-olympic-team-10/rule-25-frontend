@@ -75,12 +75,10 @@ const Wrapper = styled.div`
 export default () => {
   const [accountBooks, setAccountBooks] = useState([]);
 
-  console.log(accountBooks);
-
   useEffect(() => {
     accountBook
       .get(localStorage.getItem('userId'))
-      .then(({ data }) => _.sortBy(setAccountBooks(data), 'date').reverse());
+      .then(({ data }) => _.sortBy(setAccountBooks(data), 'id').reverse());
   }, []);
 
   return (
@@ -90,7 +88,7 @@ export default () => {
         <div className="header_expense">
           <div className="date">2021년 9월</div>
         </div>
-        {accountBooks.map((row, i) => (
+        {accountBooks.map((row) => (
           <div className="row">
             <div key={row} className="body_expense">
               <div className="detail_date">
@@ -98,7 +96,8 @@ export default () => {
               </div>
               <div className="content">{row.content}</div>
               <div className="profit">
-                {row.type === 'expenditure' ? '-' : '+'} {row.amount}
+                {row.type === 'expenditure' ? '-' : '+'}{' '}
+                {row.amount.toLocaleString()} 원
               </div>
             </div>
           </div>

@@ -3,8 +3,9 @@ import { user } from 'apis';
 import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { AiFillHome, AiFillSetting } from 'react-icons/ai';
+import { AiFillHome, AiOutlineStock } from 'react-icons/ai';
 import { BsPersonFill, BsFillPeopleFill } from 'react-icons/bs';
+import { RiMoneyDollarBoxLine } from 'react-icons/ri';
 
 const SideBar = styled.nav`
   z-index: 999;
@@ -129,24 +130,6 @@ const Logo = styled.a`
   cursor: pointer;
 `;
 
-const Login = styled.a`
-  font-size: 18px;
-  color: black;
-  margin-top: auto;
-  margin-bottom: auto;
-  cursor: pointer;
-`;
-
-const SignUp = styled.a`
-  font-size: 18px;
-  color: #ff615b;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 24px;
-  margin-right: 60px;
-  cursor: pointer;
-`;
-
 const Children = styled.div`
   position: absolute;
   width: 100%;
@@ -212,7 +195,7 @@ const Layout = ({ children }) => {
         <div className="sideSubMenuBar">
           <div className="submenuElement" onClick={() => history.push('/')}>
             <AiFillHome />
-            <div className="submenuText">Home</div>
+            <div className="submenuText">메인</div>
           </div>
 
           <div
@@ -220,7 +203,23 @@ const Layout = ({ children }) => {
             onClick={() => history.push('/my-portfolio')}
           >
             <BsPersonFill />
-            <div className="submenuText">My Portfolio</div>
+            <div className="submenuText">내 자산</div>
+          </div>
+
+          <div
+            className="submenuElement"
+            onClick={() => history.push('/add-asset')}
+          >
+            <AiOutlineStock />
+            <div className="submenuText">자산 추가</div>
+          </div>
+
+          <div
+            className="submenuElement"
+            onClick={() => history.push('/add-account-book')}
+          >
+            <RiMoneyDollarBoxLine />
+            <div className="submenuText">수입/지출 추가</div>
           </div>
 
           <div
@@ -228,15 +227,7 @@ const Layout = ({ children }) => {
             onClick={() => history.push('/friends')}
           >
             <BsFillPeopleFill />
-            <div className="submenuText">Friends</div>
-          </div>
-
-          <div
-            className="submenuElement"
-            onClick={() => history.push('/setting')}
-          >
-            <AiFillSetting />
-            <div className="submenuText">Setting</div>
+            <div className="submenuText">둘러보기</div>
           </div>
         </div>
       </SideBar>

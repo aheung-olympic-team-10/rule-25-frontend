@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import _ from 'lodash';
-import moment from 'moment';
 import { notification } from 'apis';
 
 import { Title } from 'ui';
