@@ -166,7 +166,11 @@ const SignIn = () => {
 
         <div className="gotoSignUp">
           <p className="gotoSignUpMsg">RULE 25가 처음이신가요?</p>
-          <button className="signupBtn" type="button">
+          <button
+            className="signupBtn"
+            type="button"
+            onClick={() => history.push('/sign-up')}
+          >
             회원가입하기
           </button>
         </div>
