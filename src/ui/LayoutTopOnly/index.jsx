@@ -3,6 +3,8 @@ import { user } from 'apis';
 import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import logo from './logo.png';
+
 const TopNav = styled.nav`
   z-index: 1000;
   position: fixed;
@@ -15,7 +17,8 @@ const TopNav = styled.nav`
   justify-content: space-between;
 `;
 
-const Logo = styled.a`
+const Logo = styled.img`
+  height: 30px;
   font-size: 32px;
   color: #ff615b;
   margin-left: 28px;
@@ -56,13 +59,10 @@ const LayoutTopOnly = ({ children }) => {
   const location = useLocation();
   const [profile, setProfile] = useState({});
 
-  console.log(profile);
-
   useEffect(() => {
     if (location.pathname === '/sign-in' || location.pathname === '/sign-up') {
-      console.log('?');
+      console.log('');
     } else if (!localStorage.getItem('jwt')) {
-      console.log('!');
       history.push('/sign-in');
     } else {
       user
@@ -74,7 +74,7 @@ const LayoutTopOnly = ({ children }) => {
   return (
     <>
       <TopNav>
-        <Logo onClick={() => history.push('/')}>RULE 25</Logo>
+        <Logo onClick={() => history.push('/')} src={logo} />
         <Login onClick={() => history.push('/sign-in')}>LOGIN</Login>
         <SignUp onClick={() => history.push('/sign-up')}>SIGN UP</SignUp>
       </TopNav>
