@@ -152,13 +152,10 @@ const Children = styled.div`
   width: 100%;
   height: 100%;
   z-index: 998;
-  padding-left: 230px;
-  padding-right: 30px;
-  padding-top: 134px;
   overflow: scroll;
 `;
 
-const Layout = ({ children }) => {
+const LayoutTopOnly = ({ children }) => {
   const history = useHistory();
   const location = useLocation();
   const [profile, setProfile] = useState({});
@@ -182,68 +179,13 @@ const Layout = ({ children }) => {
     <>
       <TopNav>
         <Logo onClick={() => history.push('/')}>RULE 25</Logo>
+        <Login onClick={() => history.push('/sign-in')}>LOGIN</Login>
+        <SignUp onClick={() => history.push('/sign-up')}>SIGN UP</SignUp>
       </TopNav>
-      <SideBar>
-        <div className="personalInfoArea">
-          <div
-            className="sideProfileImg"
-            style={{
-              backgroundImage: `url(${'https://jejuhydrofarms.com/wp-content/uploads/2020/05/blank-profile-picture-973460_1280.png'})`,
-              width: 100,
-              height: 100,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              margin: '20px auto',
-              borderRadius: 50,
-            }}
-          />
-          <div className="userName">{profile.name || '로딩중'}</div>
-          <div className="rmndPeriod">{profile.description || '-'}</div>
-        </div>
-
-        <div className="followInfoArea">
-          <p className="followerCnt">{profile?.followerCount}</p>
-          <p className="followerText">follower</p>
-
-          <p className="followingCnt">{profile?.followingCount}</p>
-          <p className="followingText">following</p>
-        </div>
-
-        <div className="sideSubMenuBar">
-          <div className="submenuElement" onClick={() => history.push('/')}>
-            <AiFillHome />
-            <div className="submenuText">Home</div>
-          </div>
-
-          <div
-            className="submenuElement"
-            onClick={() => history.push('/my-portfolio')}
-          >
-            <BsPersonFill />
-            <div className="submenuText">My Portfolio</div>
-          </div>
-
-          <div
-            className="submenuElement"
-            onClick={() => history.push('/friends')}
-          >
-            <BsFillPeopleFill />
-            <div className="submenuText">Friends</div>
-          </div>
-
-          <div
-            className="submenuElement"
-            onClick={() => history.push('/setting')}
-          >
-            <AiFillSetting />
-            <div className="submenuText">Setting</div>
-          </div>
-        </div>
-      </SideBar>
 
       <Children>{children} </Children>
     </>
   );
 };
 
-export default Layout;
+export default LayoutTopOnly;

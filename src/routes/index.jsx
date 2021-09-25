@@ -1,22 +1,36 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import { Main, SignUp, SignIn } from 'pages';
-import { Layout } from 'ui';
+import { Main, MyPortfolio, Friends, SignUp, SignIn } from 'pages';
+import { Layout, LayoutTopOnly } from 'ui';
 
 const Router = () => (
-  <Layout>
-    <BrowserRouter>
-      <Route exact path="/">
+  <BrowserRouter>
+    <Route exact path="/">
+      <Layout>
         <Main />
-      </Route>
-      <Route exact path="/sign-up">
+      </Layout>
+    </Route>
+    <Route exact path="/my-portfolio">
+      <Layout>
+        <MyPortfolio />
+      </Layout>
+    </Route>
+    <Route exact path="/friends">
+      <Layout>
+        <Friends />
+      </Layout>
+    </Route>
+    <Route exact path="/sign-up">
+      <LayoutTopOnly>
         <SignUp />
-      </Route>
-      <Route exact path="/sign-in">
+      </LayoutTopOnly>
+    </Route>
+    <Route exact path="/sign-in">
+      <LayoutTopOnly>
         <SignIn />
-      </Route>
-    </BrowserRouter>
-  </Layout>
+      </LayoutTopOnly>
+    </Route>
+  </BrowserRouter>
 );
 
 export default Router;
